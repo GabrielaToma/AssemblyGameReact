@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #262626;
+  color: #d9d9d9;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*header*/
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+header > p {
+  line-height: 23px;
+  font-size: 19px;
+  max-width: 370px;
+  margin-top: 15px;
+}
+
+/*game Status*/
+.gameStatus {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(50, 46, 46);
+  border-radius: 10px;
+  padding: 14px 0;
+  width: 300px;
+  height: 85px;
+}
+
+.gameWon {
+  background-color: rgb(66, 157, 66);
+}
+
+.gameLost {
+  background-color: red;
+}
+
+.gameStatus > h3 {
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+.gameStatus > p {
+  font-size: 20px;
+}
+
+/*language chips*/
+.languageChips {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 350px;
+  align-content: center;
+  justify-content: center;
+  margin-block: 25px;
+}
+
+span.chip {
+  padding: 5px;
+  margin: 1.5px;
+  border-radius: 3px;
+  position: relative;
+}
+
+/*dimmed overlay with skull on "lost" languages */
+span.chip.lost::before {
+  content: "💀";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*word to be guessed*/
+.unknownWordContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+
+.unknownLetter {
+  height: 40px;
+  width: 40px;
+  background-color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-bottom: 1px solid #f9f4da;
+}
+
+/*keyboard*/
+.keyboardContainer {
+  text-align: center;
+  max-width: 380px;
+}
+
+.letterKey {
+  background-color: rgb(168, 139, 21);
+  cursor: pointer;
+}
+
+.letterKey,
+.letterFound,
+.letterNotFound {
+  width: 35px;
+  height: 35px;
+  margin: 2.5px;
+  border-radius: 4px;
+  border: none;
+}
+
+.letterFound {
+  background-color: green;
+  cursor: auto;
+}
+
+.letterNotFound {
+  background-color: red;
+  cursor: auto;
+}
+
+.keyboardContainer > button:disabled {
+  background-color: gray;
+  color: black;
+  cursor: not-allowed;
+}
+
+/*new game button*/
+.newGameButton {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(35, 32, 32);
+  width: 150px;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: rgb(97, 97, 171);
+  border: 2px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.newGameButton:hover {
+  background-color: rgb(74, 74, 156);
+  color: black;
+}
